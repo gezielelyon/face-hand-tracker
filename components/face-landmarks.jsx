@@ -120,8 +120,8 @@ export default function FaceLandmarks() {
 	}, [faceData]);
 
 	return (
-		<section className='container mx-auto'>
-			<div className='relative w-full pt-[56.25%]'>
+		<section>
+			<div className='relative w-full h-full pt-[56.25%]'>
 				<Webcam
 					width='1280'
 					height='720'
@@ -143,13 +143,13 @@ export default function FaceLandmarks() {
 					style={{ transform: 'rotateY(180deg)' }}
 					className='absolute top-0 left-0 w-full h-full'
 				></canvas>
-				<ul className='absolute top-0 right-0 '>
+				<ul className='absolute top-0 right-0'>
 					{blendShapes.length === 0 && <p>No blend shapes detected.</p>}
 					{blendShapes.map((blendShapeSet, index) => (
 						<div key={index}>
 							{blendShapeSet.categories.map((shape, shapeIndex) => (
 								<li key={shapeIndex} className='blend-shapes-item'>
-									<span className='blend-shapes-label'>
+									<span className='blend-shapes-label text-white mr-2'>
 										{shape.displayName || shape.categoryName}
 									</span>
 									<span

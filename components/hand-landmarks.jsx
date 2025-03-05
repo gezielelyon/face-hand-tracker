@@ -101,17 +101,15 @@ export default function HandLandmarks() {
 				{handsData.map((hand, idx) => (
 					<div
 						key={idx}
-						className={`flex flex-col gap-2 absolute top-0 z-10 p-4 ${
-							hand.handedness === 'Left' ? 'left-0' : 'right-0'
-						}`}
+						className={`flex flex-col gap-2 absolute top-0 z-10 p-4 ${hand.handedness === 'Left' ? 'left-0' : 'right-0'
+							}`}
 					>
-						<h2 className='text-lg tracking-widest'>{`Hand ${idx + 1} (${
-							hand.handedness
-						})`}</h2>
+						<h2 className='text-lg tracking-widest'>{`Hand ${idx + 1} (${hand.handedness
+							})`}</h2>
 						{hand.landmark.map((point, pointIdx) => (
 							<p
 								key={pointIdx}
-								className='text-sm tracking-widest text-black'
+								className='text-sm tracking-widest text-white'
 							>{`Landmark ${pointIdx}: X: ${point.x.toFixed(
 								3
 							)}, Y: ${point.y.toFixed(3)}, Z: ${point.z.toFixed(
